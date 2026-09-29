@@ -1,38 +1,16 @@
-# Data
+# Data and provenance
 
-このディレクトリのraw/processedデータは原則ローカル生成とし、GitHubには直接コミットしない。
+公開データの再配布条件と容量を考慮し、raw GTFS ZIP（現行・履歴）はGitに含めない。今回ローカルで取得したGTFS ZIPは合計約829MBであり、URL、feed ID、版、取得日時、byte数、SHA256を `data/raw/gtfs_download_manifest.csv` に記録した。過去版APIの`prev_N`は相対指定なので、後日の再取得結果が同一とは限らない。
 
-想定構成:
+Gitには次を保存する。
 
-```text
-data/
-├─ raw/
-│  ├─ gtfs/
-│  └─ links/
-├─ processed/
-└─ cache/
-```
+- GTFS公式レジストリの**連絡先メール・free-form memoを除いた**2026-09-29スナップショットと原本SHA256
+- GTFS ZIP取得・履歴探索・メタデータ回収のマニフェスト
+- Project LINKSの取得試行日時、URL、HTTP status、エラー内容
+- 解析後の集計CSV、再現用スクリプト
 
-## raw
+## Directory meaning
 
-公開元から取得した原本。変更しない。
-
-## processed
-
-分析用に正規化・集約した中間データ。
-
-## cache
-
-再取得・解析時間短縮用。再生成可能であること。
-
-## Provenance
-
-各取得物について可能な限り以下を台帳化する。
-
-- source URL
-- resource/feed ID
-- acquisition timestamp
-- effective date
-- SHA256
-- HTTP status
-- license / redistribution notes
+- `raw/`: 取得結果または取得台帳。Gitには小規模なprovenanceファイルだけを含める。
+- `processed/`: 分析に使用できるよう加工したレジストリスナップショット。メールアドレス等の連絡先項目は除外。
+- GTFS ZIP原本は各feedの公開元からスクリプトで取得する。

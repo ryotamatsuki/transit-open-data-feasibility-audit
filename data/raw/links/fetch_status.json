@@ -1,0 +1,84 @@
+[
+  {
+    "source": "G-Space CKAN package_show",
+    "url": "https://www.geospatial.jp/ckan/api/3/action/package_show?id=links-ippanryokyaku-2025",
+    "method": "Python urllib GET with User-Agent and Accept headers",
+    "status": 403,
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": "",
+    "sha256": "",
+    "reason": "HTTP Forbidden; no CKAN resource metadata returned"
+  },
+  {
+    "source": "G-Space dataset landing page",
+    "url": "https://www.geospatial.jp/ckan/dataset/links-ippanryokyaku-2025",
+    "method": "Browser navigation and web open",
+    "status": 403,
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": "",
+    "sha256": "",
+    "reason": "CloudFront response: request blocked"
+  },
+  {
+    "source": "G-Space public resource download",
+    "url": "https://www.geospatial.jp/ckan/dataset/links-ippanryokyaku-2025/resource/5f877415-b4cb-4a08-b622-b748854677d6/download",
+    "method": "curl -L GET",
+    "status": 403,
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": 919,
+    "sha256": "7a55334da6f6d58191e6471f91589839e36d618990d984cae7c015d00c1cb6a3",
+    "reason": "CloudFront HTML error; not a data file"
+  },
+  {
+    "source": "G-Space API alternate host",
+    "url": "https://geospatial.jp/ckan/api/3/action/package_show?id=links-ippanryokyaku-2025",
+    "method": "Python urllib GET",
+    "status": 502,
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": "",
+    "sha256": "",
+    "reason": "HTTP Bad Gateway"
+  },
+  {
+    "source": "G-Space API alternate subdomain",
+    "url": "https://api.geospatial.jp/ckan/api/3/action/package_show?id=links-ippanryokyaku-2025",
+    "method": "Python urllib GET",
+    "status": 403,
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": "",
+    "sha256": "",
+    "reason": "HTTP Forbidden"
+  },
+  {
+    "source": "G-Space requests library fallback",
+    "url": "not applicable",
+    "method": "Python import requests",
+    "status": "NOT_AVAILABLE",
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": "",
+    "sha256": "",
+    "reason": "ModuleNotFoundError: requests is not installed"
+  },
+  {
+    "source": "G-Space httpx fallback",
+    "url": "not applicable",
+    "method": "not attempted after repeat 403/CloudFront block",
+    "status": "NOT_ATTEMPTED",
+    "retrieved_utc": "2026-09-28T22:32:55.581968+00:00",
+    "bytes": "",
+    "sha256": "",
+    "reason": "No alternate library used to retry the blocked endpoint"
+  },
+  {
+    "url": "https://www.geospatial.jp/ckan/dataset/links-ippanryokyaku-2025/resource/5f877415-b4cb-4a08-b622-b748854677d6/download",
+    "status": 403,
+    "bytes": 919,
+    "sha256": "752732721d97b09cd6341270c2f3b5d73b1b23b06fe00abc09d66f0b14dcc9fe",
+    "retrieved_utc": "2026-09-28T22:52:22.040176+00:00",
+    "method": "curl -L GET; Chrome-like User-Agent, MLIT Referer, Accept text/csv/application/zip",
+    "content_type": "text/html",
+    "error": "HTTP 403 text/html CloudFront error; ordinary browser-like headers did not yield the public CSV/ZIP",
+    "response_headers_file": "data/raw/links/browser_headers.response_headers.txt",
+    "response_body_file": "data/raw/links/browser_headers.response_body.bin"
+  }
+]

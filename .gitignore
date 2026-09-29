@@ -1,43 +1,35 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
 .venv/
 venv/
-env/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
 
-# Local configuration
+# Secrets and local configuration
 .env
 .env.*
 !.env.example
 
-# Raw / downloaded data
+# Raw data: do not commit source ZIP archives or unreviewed downloads
 data/raw/*
 !data/raw/.gitkeep
-data/cache/*
-!data/cache/.gitkeep
+!data/raw/source_manifest.csv
+!data/raw/gtfs_download_manifest.csv
+!data/raw/gtfs_history_fetch_coverage.csv
+!data/raw/gtfs_history_metadata_recovery.csv
+!data/raw/gtfs_excluded_registry_feeds.csv
+!data/raw/links/
+data/raw/links/*
+!data/raw/links/fetch_status.csv
+!data/raw/links/fetch_status.json
+!data/raw/links/*.error.html
+!data/raw/links/*response_headers.txt
+
+# Processed snapshots: allow only the reviewed, email-free registry snapshot
+data/processed/*
+!data/processed/gtfs_registry_snapshot_20260929.json
+!data/processed/gtfs_registry_snapshot_20260929.csv
+!data/processed/gtfs_registry_snapshot_metadata.json
+
+# Never commit downloaded archives
 *.zip
 *.gtfs
-
-# Large generated artifacts
-downloads/
-cache/
-tmp/
-temp/
-
-# Generated analysis intermediates
-data/processed/*
-!data/processed/.gitkeep
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Logs
-*.log

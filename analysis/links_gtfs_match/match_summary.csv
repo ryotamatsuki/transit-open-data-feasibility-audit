@@ -1,0 +1,7 @@
+﻿match_class,confirmed_or_candidate_count,status,note
+A,,not_evaluable_LINKS_data_unavailable,raw exact name
+B,,not_evaluable_LINKS_data_unavailable,normalized exact name
+C,,not_evaluable_LINKS_data_unavailable,manual approved alias
+D,,not_evaluable_LINKS_data_unavailable,"fuzzy candidates only, not accepted"
+E,,not_evaluable_LINKS_data_unavailable,no candidate after a complete LINKS comparison
+GTFS_total,444,measured_from_internal_GTFS_agency_names,"Canonical entities across current GTFS feeds, not feed count"

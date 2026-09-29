@@ -1,0 +1,18 @@
+{
+  "snapshot_date_jst": "2026-09-29",
+  "source_url": "https://api.gtfs-data.jp/v2/feeds",
+  "source_retrieved_utc": "2026-09-28T22:10:51.276716+00:00",
+  "source_raw_sha256": "935fc3e5cacd44a30551e53a7b0f82ae270a160433325eed743d3ab31648f5f8",
+  "sanitized_snapshot_sha256_json": "21331591282c2285ef76b6b8bbf2454eab8cddb5943ee0872617531151830e23",
+  "sanitized_snapshot_sha256_csv": "80147b8f2391f4e52b574be539bc8b1d401d50f356288f12cee66135bfe42587",
+  "rows": 605,
+  "omitted_fields": [
+    "organization_email",
+    "feed_memo",
+    "feed_src_gtfs_current_url",
+    "feed_src_gtfs_next_url",
+    "feed_src_gtfs_web_url",
+    "organization_web_url"
+  ],
+  "reason": "Public repository snapshot excludes contact and free-form fields; exact source checksum and URL are retained in the acquisition manifest."
+}

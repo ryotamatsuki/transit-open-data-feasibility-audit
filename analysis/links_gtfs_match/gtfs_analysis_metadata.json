@@ -1,0 +1,15 @@
+{
+  "anchor_date": "2026-09-29",
+  "selected_anchor_feed_archives": 551,
+  "selected_archive_versions": {
+    "current": 551
+  },
+  "bus_agency_rows": 530,
+  "gtfs_bus_operator_entities": 444,
+  "excluded_feeds": 26,
+  "errors": 0,
+  "route_type_rule": "3, 11, 700-799",
+  "trip_hours_note": "sum of scheduled trip elapsed times; not vehicle duty hours",
+  "km_note": "sum of stop-to-stop great-circle distances; straight-line proxy, not routed vehicle-km",
+  "headway_note": "mean per-route gap among service dates in the evaluation window; approximate"
+}

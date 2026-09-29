@@ -1,68 +1,39 @@
 # Current Status
 
-Snapshot date: **2026-09-29**
+Snapshot date: **2026-09-29 JST**
 
-## Completed
+## GTFS registry and current feeds
 
-### GTFS registry / current feeds
+- 公式API `/v2/feeds`: **605 feed-pair rows**。
+- 2026-09-29に有効なZIP: **551**。`feed_info.txt` の実期間を確認。
+- バス系フィード: **525**。
+- 選択したZIPの内部agency行: **530**。
+- 名称等で集約したagency由来エンティティ: **444**。これは道路運送法上の事業者数ではない。
 
-- GTFS公式APIのフィード登録: **605**
-- 基準日2026-09-29で有効なZIPを選択
-- バス系feedと内部`agency.txt`を解析
-- agency由来エンティティ: **444**
+## GTFS history — extension前の分析値
 
-注意: 444は道路運送法上の事業者数ではない。
+- 2年以上: **195 / 444 agency-derived entities**。
+- 3年以上: **119 / 444 agency-derived entities**。
+- いずれも全構成フィードの履歴を要求する保守的な定義。
+- 33フィード、最大48世代の追加探索は途中停止。ZIP総数は2,823だが、延長分はマニフェストと集計に未反映。したがって195/119を延長後の値として扱わない。
 
-### GTFS history — official aggregate before extension
+## Project LINKS — blocked
 
-- 2年以上: **195 feeds**
-- 3年以上: **119 feeds**
+CKAN `package_show` API、dataset landing page、resource downloadへのGETがHTTP 403。代替ホストでは502を確認。公開CSV・仕様書本体は取得できていない。
 
-### Reproducibility
+次の件数・項目有無はすべて未確定であり、0とは扱わない。
 
-- 再現用スクリプト群は別作業環境で作成済み
-- `py_compile` による構文確認済み
+- GTFSとのA〜E名寄せ数
+- 輸送人員・車両関連指標・営業収入の充足数
+- 事業概況・運転者数の充足数、年度・粒度
+- 都道府県別の完全充足数・充足率
+- 指標A〜JのLINKS連結計算可能数
+- 最終Supply Stress Test適格事業者数
 
-## Blocked
+## Available artifacts
 
-### Project LINKS
+分析CSVと再現用スクリプトをこのリポジトリに保存した。`analysis/links_gtfs_match/` のファイル一覧を参照。`prefecture_summary.csv`、`indicator_feasibility.csv`、`ehime_detail.csv`、`funnel_summary.csv`、`final_assessment.md` はまだ生成していない。
 
-CKAN API、データセットページ、公開resource URLの取得を試したがHTTP 403。
+## Decision status
 
-そのため以下は未確定。
-
-- GTFS ↔ LINKSの名寄せ件数
-- 運転者数の取得可能件数
-- 輸送実績の項目充足件数
-- 事業概況の項目充足件数
-- 都道府県別の完全充足率
-- 愛媛県の完全充足事業者
-- Supply Stress Test指標の実計算可能事業者数
-
-## Interrupted history extension
-
-追加対象: 33 feeds  
-探索上限: 最大48世代
-
-停止時点:
-
-- 完了ログ確認: **25 / 33 feeds**
-- ローカルに存在する履歴ZIP: **2,823**
-- 延長分の取得台帳反映: 未実施
-- 延長分の2年/3年再集計: 未実施
-
-したがって、195 / 119を延長後の件数として更新しない。
-
-## Missing final outputs
-
-- prefecture_summary.csv
-- indicator_feasibility.csv
-- ehime_detail.csv
-- funnel summary
-- final_assessment.md
-
-## Current decision
-
-**NOT YET EVALUATED**
-
-全国版Transit Supply Stress Testを本命採用できるだけの検証は完了していない。ただし、LINKSの必要項目が存在しないと判明したわけではなく、公開データ本体の取得が完了していないため未確定。
+**NOT YET EVALUATED**。全国版を本命採用できる証拠はまだそろっていない。一方、Project LINKSに必要列がないと判明したわけではない。データ本体未取得による未確定である。
